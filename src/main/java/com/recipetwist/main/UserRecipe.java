@@ -21,7 +21,6 @@ public class UserRecipe {
 	@ElementCollection
 	private Map<Integer,String> ingredients_edits;
 	
-	
 	@ElementCollection
 	@Lob
 	private Map<Integer,String> steps_edits;
@@ -35,10 +34,8 @@ public class UserRecipe {
 		super();
 		this.id = id;
 		this.original_recipe = original_recipe;
-		this.ingredients_edits = ingredients_edits;
-		
-		this.steps_edits = steps_edits;
-		
+		this.ingredients_edits = ingredients_edits;	
+		this.steps_edits = steps_edits;	
 	}
 
 	public Long getid() {
@@ -77,11 +74,5 @@ public class UserRecipe {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
-	
-
-	
-	
-	
 	
 }

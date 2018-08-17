@@ -54,5 +54,4 @@ public class Recipe {
 		return "Recipe [id=" + id + ", title=" + title + "]";
 	}
 	
-
 }

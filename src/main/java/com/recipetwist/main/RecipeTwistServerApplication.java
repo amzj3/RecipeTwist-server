@@ -26,7 +26,6 @@ public class RecipeTwistServerApplication {
 	@Bean
     ApplicationRunner init(RecipeRepository recipe_repo, UserRecipeRepository user_repo) {
 		return args -> {
-			
 			generateMockDataFromFolder(recipe_repo,user_repo);
 		};
 	}
@@ -38,9 +37,7 @@ public class RecipeTwistServerApplication {
 		for (File file : listOfFiles) {
 		    if (file.isFile()) {
 		    	try {
-		    		
 					Scanner temp = new Scanner(file);
-					
 					String title = temp.nextLine();
 					temp.nextLine(); //Ingredients
 					List<String> ing = new ArrayList<String>();
@@ -63,8 +60,6 @@ public class RecipeTwistServerApplication {
 					
 					System.out.println(recipe);
 				} catch (FileNotFoundException e) {
-					
-					
 					e.printStackTrace();
 				} 
 		        
