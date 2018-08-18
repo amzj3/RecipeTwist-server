@@ -21,16 +21,18 @@ public class UserRecipe {
 	@ElementCollection
 	private Map<Integer,String> ingredients_edits;
 	
+	//key is of the format a.b where a is the step and b is the
+	//offset after the step
 	@ElementCollection
 	@Lob
-	private Map<Integer,String> steps_edits;
+	private Map<String,String> steps_edits;
 	
 	public UserRecipe() {
 		super();
 	}
 	
 	public UserRecipe(Long id, Long original_recipe, Map<Integer,String> ingredients_edits,
-			Map<Integer,String> steps_edits) {
+			Map<String,String> steps_edits) {
 		super();
 		this.id = id;
 		this.original_recipe = original_recipe;
@@ -63,7 +65,7 @@ public class UserRecipe {
 	}
 
 
-	public Map<Integer,String> getSteps_edits() {
+	public Map<String,String> getSteps_edits() {
 		return steps_edits;
 	}
 

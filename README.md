@@ -49,9 +49,9 @@ The recipes database allows searching by ingredient. For example, to find recipe
 
 > title : title of the recipe
 
-> ingredients_edits : a dictionary {index:text}, where index is the index of an ingredient in the original recipe and text is the change that the user chose
+> ingredients_edits : a dictionary {index:text}, where index is the index of an ingredient in the original recipe and text is the change that the user chose. If the index does not exists in the original recipes, then it is an addition.
 
-> steps_edits : a dictionary {index:text}, where index is the index of a step in the original recipe and text is the change that the user chose
+> steps_edits : a dictionary {a.b:text}, where a.b is the index of a step in the original recipe. if .b is not part of the index, then it is a modification of step a. Otherwise, step a.b is added at offset b after step a. and text is the text at that step.
 
 **Sample Response**
 
@@ -64,16 +64,14 @@ The recipes database allows searching by ingredient. For example, to find recipe
 > 	"title" : "Healthier Mushroom Beef Tips with Rice",
 
 > 	"ingredients_edits" : {
+>       "1" : "2 tablespoons olive oil ",
+>       "5" : "1/2 cup frozen spinach  "
+>     },
 
-> 	"1" : "2 tablespoons olive oil "
-
-> 	},
-
-> 	"steps_edits" : {
-
-> 	"0" : "In a large skillet, saute mushrooms in olive oil for 2 minutes. Add beef to pan; cook for 4-6 minutes or until heated through, stirring occasionally. "
-
-> 	}
+> 	"steps_edits" :  {
+>        "0" : "In the same skillet, saute mushrooms for 2 minutes. Add beef to pan; cook for 4-6 minutes or until heated through, stirring occasionally. ",
+>        "-0.1" : "Cook spinach in a skillet with a spoon of olive oil until it is almost cooked "
+>      }
 
 > }
 
